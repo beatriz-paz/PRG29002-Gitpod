@@ -4,7 +4,7 @@ int main(void)
 {
     int year = 2022;
 
-    printf("Ola, mundo!\n");
+    printf("Hello World!\n");
     printf("Estamos em %d.\n", year);
 
     return 0;
