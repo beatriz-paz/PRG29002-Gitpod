@@ -16,22 +16,18 @@ int main(void)
     if (delta > 0) {
         x1 = (-b + sqrt(delta)) / (2 * a);
         x2 = (-b - sqrt(delta)) / (2 * a);
-        printf("Duas raizes reais: %f  %f\n", x1, x2);
-    if (delta == 0.0) {
-        printf("Uma raiz real: %f ", ((-b + sqrt(delta)) / (2 * a)));
-        } else if (delta < 0) {
-            printf("Duas raizes imaginarias: %fi %fi", (-b + sqrt(delta)) / (2 * a), (-b - sqrt(delta)) / (2 * a));
-        }else
-        {
-            printf("Duas raizes complexas:");
-        }
-    
-    /*} else if (delta < 0) {
-        i1 = (-b + sqrt(-delta)) / (2 * a);
-    }else{
-        printf("Impossivel\n");
-    }*/
+        printf("Duas raizes reais: %f, %f\n", x1, x2);
 
+    if (delta == 0) {
+        printf("Uma raiz real: %f ", ((-b + sqrt(delta)) / (2 * a)));
+
+    } else if (delta < 0) {
+        printf("Duas raizes imaginarias: +j%f -j%f", (-b + sqrt(-delta)) / (2 * a), (-b - sqrt(-delta)) / (2 * a));
+
+    }else
+        {
+        printf("Duas raizes complexas:");
+        }
     return 0;
     }
 }
