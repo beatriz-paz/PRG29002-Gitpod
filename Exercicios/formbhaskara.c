@@ -4,11 +4,11 @@
 int main(void)
 {
     float a, b, c;
-    float delta, x1, x2, i1;
+    float delta, x1, x2;
 
     printf("\nFórmula de Bhaskara\n\n");
 
-    printf("Entre com os coeficientes A, B e C: ");
+    printf("Entre com os coeficientes: ");
     scanf("%f%f%f", &a, &b, &c);
 
     delta = (b * b) - (4 * a * c);
@@ -17,17 +17,18 @@ int main(void)
         x1 = (-b + sqrt(delta)) / (2 * a);
         x2 = (-b - sqrt(delta)) / (2 * a);
         printf("Duas raizes reais: %f, %f\n", x1, x2);
-
-    if (delta == 0) {
-        printf("Uma raiz real: %f ", ((-b + sqrt(delta)) / (2 * a)));
-
-    } else if (delta < 0) {
-        printf("Duas raizes imaginarias: +j%f -j%f", (-b + sqrt(-delta)) / (2 * a), (-b - sqrt(-delta)) / (2 * a));
-
-    }else
-        {
-        printf("Duas raizes complexas:");
-        }
-    return 0;
     }
+    if (delta == 0) {
+        printf("Uma raiz real: %f \n", ((-b + sqrt(delta)) / (2 * a)));
+
+    } else if (delta < 0 && b == 0) {
+        delta = -delta;
+        printf("Duas raizes imaginarias: +j%f -j%f\n", (-b - sqrt(delta)) / (2 * a), (-b - sqrt(delta)) / (2 * a));
+    } else{
+        delta = -delta;
+        printf("Duas raizes complexas: -%f + j%f, -%f - j%f\n", b / (2*a), sqrt(delta) / (2*a), b / (2*a), sqrt(delta) / (2*a));
+
+    }
+
+    return 0;
 }
