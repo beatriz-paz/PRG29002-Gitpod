@@ -1,5 +1,9 @@
 {
     "editor.formatOnSave": true,
     "editor.fontSize": 16,
-    "terminal.integrated.fontSize": 14
+    "terminal.integrated.fontSize": 14,
+    "lldb.displayFormat": "auto",
+    "lldb.showDisassembly": "never",
+    "lldb.dereferencePointers": true,
+    "lldb.consoleMode": "commands"
 }

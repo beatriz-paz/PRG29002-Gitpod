@@ -6,14 +6,16 @@
     "configurations": [
         {
             "name": "Debug",
+            "type": "lldb",
             "request": "launch",
-            "type": "gdb",
-            "target": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-            "valuesFormatting": "parseText",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Compile",
-            "autorun": ["set disable-randomization off"],
-            "internalConsoleOptions": "openOnSessionStart"
+            "initCommands": [
+                "settings set target.disable-aslr false"
+            ],
+            "internalConsoleOptions": "neverOpen"
         }
     ]
 }

@@ -1,4 +1,5 @@
 vscode:
   extensions:
-    - webfreak.debug
     - llvm-vs-code-extensions.vscode-clangd
+    - vadimcn.vscode-lldb
+    - webfreak.debug
