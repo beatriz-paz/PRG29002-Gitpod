@@ -12,7 +12,7 @@ int main(void)
 
     if (num < 1 || num > 99) {
         printf("Número invalido\n");
-    } else {
+    } else if (num >=1 && num <=20) {
     switch (num) {
         case 1:
             printf("Um\n"); break;
@@ -67,14 +67,18 @@ int main(void)
         case 20:
             printf("Vinte\n"); break;
     }
-    }
+    } else {
 
     num_atual = num;
     dezena = num / 10;
     unidade = num_atual % 10;
 
-    printf("\"%d e %d\"\n", dezena_extenso(dezena), unidade_extenso(unidade));
+    dezena = dezena_extenso(dezena);
+    unidade = unidade_extenso(unidade);
 
+    printf("%c e %c\n", dezena, unidade);
+
+    }
     return 0;
 }
 
