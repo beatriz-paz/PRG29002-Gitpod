@@ -73,7 +73,7 @@ int main(void)
     dezena = num / 10;
     unidade = num_atual % 10;
 
-    printf("\"%c e %c\"\n", dezena_extenso(dezena), unidade_extenso(unidade));
+    printf("\"%d e %d\"\n", dezena_extenso(dezena), unidade_extenso(unidade));
 
     return 0;
 }
