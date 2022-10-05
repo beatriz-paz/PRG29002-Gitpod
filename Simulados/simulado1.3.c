@@ -12,7 +12,7 @@ int main(void)
 
     tentativas = 1;
 
-    while (tentativas <= 3) {
+    while (tentativas < 3) {
         if (SENHA == valor_lido) {
             printf("Acesso autorizado\n");
             break;
@@ -22,6 +22,11 @@ int main(void)
             scanf("%lg", &valor_lido);
             tentativas++;
         }
+    }
+
+    if (tentativas == 3) {
+        printf("Acesso negado (senha incorreta)\n");
+        printf("Sistema bloqueado\n");
     }
 
     return 0;
