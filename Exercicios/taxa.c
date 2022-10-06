@@ -23,16 +23,16 @@ double calcula_comissao(double valor)
         if (taxa < 39) {
             taxa = 39;
         }
-    } else if (valor >= 2500 && valor < 6250) {
+    } else if (valor < 6250) {
         taxa = 56 + 0.0066*valor;
     }
-    else if (valor >= 6250 && valor < 20000){
+    else if (valor < 20000){
         taxa = 76 + 0.0034 * valor;
     }
-    else if (valor >= 20000 && valor < 50000){
+    else if (valor < 50000){
         taxa = 100 + 0.0022 * valor;
     }
-    else if (valor >= 50000 && valor < 500000){
+    else if (valor < 500000){
         taxa = 155 + 0.0011 * valor;
     } else if (valor >= 500000 ) {
         taxa = 255 + 0.0009 * valor;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-char dezena_extenso(int dezena);
-char unidade_extenso(int unidade);
+void dezena_extenso(int dezena);
+void unidade_extenso(int unidade);
 
 int main(void)
 {
@@ -73,16 +73,16 @@ int main(void)
     dezena = num / 10;
     unidade = num_atual % 10;
 
-    dezena = dezena_extenso(dezena);
-    unidade = unidade_extenso(unidade);
-
-    printf("%c e %c\n", dezena, unidade);
+    dezena_extenso(dezena);
+    printf(" e ");
+    unidade_extenso(unidade);
+    printf("\n");
 
     }
     return 0;
 }
 
-char dezena_extenso(int dezena)
+void dezena_extenso(int dezena)
 {
     switch (dezena) {
         case 2: printf("Vinte"); break;
@@ -94,10 +94,9 @@ char dezena_extenso(int dezena)
         case 8: printf("Oitenta"); break;
         case 9: printf("Noventa"); break;
     }
-    return 0;
 }
 
-char unidade_extenso(int unidade)
+void unidade_extenso(int unidade)
 {
     switch (unidade) {
         case 1:printf("Um");break;
@@ -110,5 +109,4 @@ char unidade_extenso(int unidade)
         case 8:printf("Oito");break;
         case 9:printf("Nove");break;
     }
-    return 0;
 }

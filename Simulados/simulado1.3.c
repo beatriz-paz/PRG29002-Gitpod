@@ -21,13 +21,12 @@ int main(void)
             printf("Entre com a senha: ");
             scanf("%lg", &valor_lido);
             tentativas++;
-        }
+            }
     }
-
-    if (tentativas == 3) {
+    if (tentativas >= 3 && valor_lido != SENHA) {
         printf("Acesso negado (senha incorreta)\n");
         printf("Sistema bloqueado\n");
-    }
+    } 
 
     return 0;
 }
