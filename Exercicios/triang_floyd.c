@@ -15,14 +15,13 @@ int main(void)
 
 void imprimi_triangulo(int num_linha)
 {
-    int i, n;
+    int i, n, valor = 0;
 
     for (i = 1; i <= num_linha; i++) {
-
         for (n = 1; n <= i; n++) {
-            printf("%d", i);
+            valor++;
+            printf("%d ", valor);
         }
         printf("\n");
-        n = n*(n + 1) / 2;
     }
 }

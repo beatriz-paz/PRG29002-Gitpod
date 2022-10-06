@@ -15,57 +15,57 @@ int main(void)
     } else if (num >=1 && num <=20) {
     switch (num) {
         case 1:
-            printf("Um\n"); break;
+            printf("\"Um\"\n"); break;
         case 2:
-            printf("Dois\n");break;
+            printf("\"Dois\"\n");break;
         case 3:
-            printf("Três\n");break;
+            printf("\"Três\"\n");break;
         case 4:
-            printf("Quatro\n");break;
+            printf("\"Quatro\"\n");break;
         case 5:
-            printf("Cinco\n");break;
+            printf("\"Cinco\"\n");break;
         case 6:
-            printf("Seis\n");break;
+            printf("\"Seis\"\n");break;
         case 7:
-            printf("Sete\n");break;
+            printf("\"Sete\"\n");break;
         case 8:
-            printf("Oito\n");
+            printf("\"Oito\"\n");
             break;
         case 9:
-            printf("Nove\n");
+            printf("\"Nove\"\n");
             break;
         case 10:
-            printf("Dez\n");
+            printf("\"Dez\"\n");
             break;
         case 11:
-            printf("Onze\n");
+            printf("\"Onze\"\n");
             break;
         case 12:
-            printf("Doze\n");
+            printf("\"Doze\"\n");
             break;
         case 13:
-            printf("Treze\n");
+            printf("\"Treze\"\n");
             break;
         case 14:
-            printf("Quartoze\n");
+            printf("\"Quartoze\"\n");
             break;
         case 15:
-            printf("Quinze\n");
+            printf("\"Quinze\"\n");
             break;
         case 16:
-            printf("Dezesseis\n");
+            printf("\"Dezesseis\"\n");
             break;
         case 17:
-            printf("Dezessete\n");
+            printf("\"Dezessete\"\n");
             break;
         case 18:
-            printf("Dezoito\n");
+            printf("\"Dezoito\"\n");
             break;
         case 19:
-            printf("Dezenove\n");
+            printf("\"Dezenove\"\n");
             break;
         case 20:
-            printf("Vinte\n"); break;
+            printf("\"Vinte\"\n"); break;
     }
     } else {
 
@@ -73,9 +73,11 @@ int main(void)
     dezena = num / 10;
     unidade = num_atual % 10;
 
+    printf("\"");
     dezena_extenso(dezena);
     printf(" e ");
     unidade_extenso(unidade);
+    printf("\"");
     printf("\n");
 
     }
