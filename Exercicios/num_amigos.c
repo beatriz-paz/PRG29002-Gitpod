@@ -1,15 +1,22 @@
 #include <stdio.h>
 
 int soma_divisores(int n);
+int sao_amigos(int a, int b);
 
 int main(void)
 {
-    int a, b;
+    int a, b, amigos;
 
     printf("Entre com dois inteiros positivos: ");
     scanf("%d %d", &a, &b);
 
-    printf("%d", soma_divisores(a));
+    amigos = sao_amigos(a, b);
+
+    if (amigos == 1) {
+        printf("Os numeros %d e %d sao amigos\n", a, b);
+    } else {
+        printf("Os numeros %d e %d nao sao amigos\n", a, b);
+    }
 
     return 0;
 }
@@ -21,11 +28,20 @@ int soma_divisores(int n)
 
     for (i = 1; i < n; i++) {
         if (n % i == 0) {
-            num = n;
-            printf("%d \n", num);
+            num += i;
         }
     }
-    printf("\n");
+    return num;
+}
 
-    return 0;
+int sao_amigos(int a, int b)
+{
+    int amigos, num_a, num_b;
+
+    num_a = soma_divisores(a);
+    num_b = soma_divisores(b);
+
+    amigos = (num_a == b) && (num_b == a);
+
+    return amigos;
 }
