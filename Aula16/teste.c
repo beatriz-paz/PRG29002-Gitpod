@@ -26,7 +26,7 @@ void string_rep(char *nome, int n, char *nome_rep)
     i = 0;
 
     while (rep < n) {
-        for (i = 0; i < j - i; i++) {
+        for (i = 0; i <= 2; i++) {
             nome_rep[j] = nome[i];
             j++;
         }
@@ -34,6 +34,4 @@ void string_rep(char *nome, int n, char *nome_rep)
         nome_rep[j] = 0;
         rep++;
     }
-    
-
 }

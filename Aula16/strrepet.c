@@ -18,7 +18,7 @@ int main(void)
 {
     char nome[10] = "Beatriz";
     char nome_rep[100];
-    string_rep(nome, 0, nome_rep);
+    string_rep(nome, 2, nome_rep);
     printf("%s\n", nome_rep);
 
     return 0;
