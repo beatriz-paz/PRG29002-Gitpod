@@ -19,12 +19,18 @@ int main(void)
             sequencia[i] = f1;
             i++;
         } else {
-            sequencia[i] = a * (i - 1) + b * (i - 2);
+            sequencia[i] = a * (sequencia[i -1]) + b * (sequencia[i -2]);
             i++;
         }
     }
 
-    printf("Sequencia: %d \n", sequencia[i]);
+    i = 0;
+
+    printf("Sequencia: ");
+    for (i = 0; i < 10; i++) {
+        printf("%d ", sequencia[i]);
+    }
+    printf("\n");
 
     return 0;
 }
