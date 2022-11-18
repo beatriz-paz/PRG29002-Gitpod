@@ -8,6 +8,7 @@ int main(void)
     //nome[0] = 'B';
     //nome[1]++;
     //nome[2] = 97; //97 == a
+    nome[0] = ' ';
 
     printf("%s\n", nome);
 
