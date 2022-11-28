@@ -19,6 +19,8 @@ double valor_total_item(Item item);
 void adiciona_item(Feira *feira, Item item);
 void imprime_feira(Feira *feira);
 void vende_item(Feira *feira, int id, double kg);
+double modifica_preco(Feira *feira, int id, double novo_preco);
+double valor_total_estoque(Feira *feira, int id);
 
 int main(void)
 {
@@ -36,10 +38,16 @@ int main(void)
     adiciona_item(&feira, banana);
     adiciona_item(&feira, uva);
 
+    printf("%lg",valor_total_item(banana));
+
     imprime_feira(&feira);
 
     printf("Vendemos 2kg de pera:\n\n");
     vende_item(&feira, 0, 2.0);
+
+    imprime_feira(&feira);
+
+    modifica_preco(&feira, 0, 9.99);
 
     imprime_feira(&feira);
 
@@ -72,4 +80,20 @@ void vende_item(Feira *feira, int id, double kg)
 {
     feira->estoque[id].peso_total -= kg;
     feira->caixa += kg * feira->estoque[id].preco_kg;
+}
+
+double modifica_preco(Feira *feira, int id, double novo_preco)
+{
+    return feira->estoque[id].preco_kg = novo_preco;
+}
+
+double valor_total_estoque(Feira *feira, int id)
+{
+    double valor = 0.0;
+
+    for (id = 0; feira->estoque[id].preco_kg != 0 ; id++) {
+        //valor += valor_total_item()
+    }
+
+    return valor;
 }
