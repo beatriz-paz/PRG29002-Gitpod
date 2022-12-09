@@ -56,8 +56,12 @@ int sobrepoem(Disco c1, Disco c2)
     int sobrepoem;
 
     r = c1.raio + c2.raio;
+    sobrepoem = distancia(c1.centro, c2.centro);
 
-    sobrepoem = distancia(c1.centro, c2.centro) < r;
+    if (sobrepoem < r) {
+        return 1;
+    } else {
+        return 0;
+    }
 
-    return sobrepoem;
 }
