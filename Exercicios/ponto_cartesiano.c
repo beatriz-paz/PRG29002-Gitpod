@@ -41,9 +41,9 @@ int quadrante(Ponto p)
         quadrante = 2;
     }else if (p.x < 0 && p.y < 0) {
         quadrante = 3;
-    } else if (p.y > 0 || p.y < 0 && p.x == 0) {
+    } else if ((p.y > 0 || p.y < 0) && p.x == 0) {
         quadrante = 0;
-    } else if (p.x > 0 || p.x < 0 && p.y == 0) {
+    } else if ((p.x > 0 || p.x < 0) && p.y == 0) {
         quadrante = 0;
     }
 
