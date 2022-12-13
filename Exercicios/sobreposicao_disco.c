@@ -34,7 +34,7 @@ int main(void)
 
     if (sobrepoem_discos == 1) {
         printf("Os discos se sobrepoem\n");
-    } else if (sobrepoem_discos != 1){
+    } else{
         printf("Os discos nao se sobrepoem\n");
     }
 
@@ -53,15 +53,15 @@ double distancia(Ponto p1, Ponto p2)
 int sobrepoem(Disco c1, Disco c2)
 {
     double r;
-    int sobrepoem;
+    double sobrepoem;
 
     r = c1.raio + c2.raio;
     sobrepoem = distancia(c1.centro, c2.centro);
 
     if (sobrepoem < r) {
-        return 1;
-    } else {
         return 0;
+    } else {
+        return 1;
     }
 
 }
