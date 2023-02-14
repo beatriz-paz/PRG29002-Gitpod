@@ -1,6 +1,7 @@
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <cctype>
+
+using namespace std;
 
 void maiuscula(char *str) {
     int i, j, num;
@@ -20,14 +21,14 @@ void maiuscula(char *str) {
     }
 }
 
-int main(void){
+int main(){
 
     char str[100];
 
-    printf("Entre com seu nome completo: ");
+    cout << "Entre com seu nome completo: ";
     fgets(str, sizeof (str), stdin); // le a string do usuario
     maiuscula(str); //funcao que trata a string, removendo espaços e deixando a primeira letra maiuscula
-    printf("%s\n", str);
+    cout << str << endl;
 
     return 0;
 }
