@@ -1,26 +1,42 @@
 #include <stdio.h>
 
-int main(void)
-{
-    int n1;
-    int n2;
-    int n3;
+int main(){
 
-    printf("Entre com o conceito 1 (E-10, P-8, S-6 e I-1): ");
-    scanf("%d", &n1);
+    int excelente = 0, proficiente = 0, suficiente = 0, insuficiente = 0;
+    char conceito;
 
-    printf("Entre com o conceito 2 (E-10, P-8, S-6 e I-1): ");
-    scanf("%d", &n2);
 
-    printf("Entre com o conceito 3 (E-10, P-8, S-6 e I-1): ");
-    scanf("%d", &n3);
+    printf("Entre com os conceitos (E-excelente, P-proficiente, S-suficiente) e I-insuficiente: \n");
 
-    if (n1 + n2 + n3 > 28) {
-        printf("Conceito final: Excelente\n");
-    } else if (n1 + n2 + n3 > 22) {
-        printf("Conceito final: Proeficiente\n");
-    } else if (n1 + n2 + n3 < 22) {
-        printf("Conceito final: Suficiente\n");
+    for (int i = 0; i < 3; i++) {
+        scanf(" %c", &conceito);
+        switch(conceito) {
+            case 'E':
+                excelente++;
+                break;
+            case 'P':
+                proficiente++;
+                break;
+            case 'S':
+                suficiente++;
+                break;
+            case 'I':
+                insuficiente++;
+                break;
+            default:
+                printf("Conceito inválido! Use E, P, S ou I.\n");
+                i--; // decrementa o índice para ler o conceito novamente
+        }
+    }
+
+    if (excelente >= (3/2) && insuficiente == 0) {
+        printf("Nota resultante: Excelente\n");
+    } else if (proficiente >= (3/2) && insuficiente == 0) {
+        printf("Nota resultante: Proficiente\n");
+    } else if (insuficiente == 0) {
+        printf("Nota resultante: Suficiente\n");
+    } else {
+        printf("Nota resultante: Insuficiente\n");
     }
 
     return 0;
