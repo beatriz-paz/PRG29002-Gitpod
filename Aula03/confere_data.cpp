@@ -1,68 +1,89 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main(){
+int main() {
 
-    int dig_ano;
     string data;
-    int dia[2], mes[2], ano[5];
+    int dia, mes, ano;
     bool data_certa = false;
 
     getline(cin, data);
 
-    for (int i = 0; i < 10; ++i) {
-        if(i < 2){
-            dia[i] = data[i];
-        } else if(5 > i > 2){
-            mes[i] = data[i];
-        } else if(i > 5){
-            ano[i] = data[i];
-            dig_ano++;
-        }
+    if (data.size() != 10 || data[2] != '/' || data[5] != '/') {
+        cout << "data invalida" << endl;
+        return false;
     }
+    
+    // converte string para inteiro
+    try{
+        dia = std::stoi(data.substr(0, 2));
+        mes = std::stoi(data.substr(3, 2));
+        ano = std::stoi(data.substr(6, 4));
+    } catch(...) {
+        return false;
+    }
+
+    if (1 > dia > 31){
+        cout << "data invalida" << endl;
+        return false;
+    }
+
+    if (1 > mes > 12){
+        cout << "data invalida" << endl;
+        return false;
+    }
+
+    if (0001 > ano > 9999){
+        cout << "data invalida" << endl;
+        return false;
+    }
+
 
     switch (dia) {
+
         case 31:
-            if (mes == 1 || 3 || 5 || 7 || 8 || 10 || 12){
-                if (ano == 4){ //ano com 4 digitos
+            if (mes == 1 || 3 || 5 || 7 || 8 || 10 || 12) {
                     data_certa = true;
-                } else{
+                } else {
                     data_certa = false;
                 }
-            }
+            break;
+
         case 30:
-            if (mes == 4 || 6 || 9 || 11){
-                if (ano == 4){
+            if (mes == 4 || 6 || 9 || 11) {
                     data_certa = true;
-                } else{
+                } else {
                     data_certa = false;
                 }
-            }
+            break;
+
         case 28:
-            if (mes == 2){
-                if (ano == 4){
+            if (mes == 2) {
                     data_certa = true;
-                } else{
+                } else {
                     data_certa = false;
                 }
-            }
+            break;
+
         case 29:
-            if (mes == 2){
-                if (ano == 4){
+            if (mes == 2) {
                     data_certa = true;
-                } else{
+                } else {
                     data_certa = false;
                 }
-            }
+            break;
+            
+        default:
+            data_certa = true;
     }
 
-    if(data_certa){
+    if (data_certa) {
         cout << data << endl;
-    } else{
+    } else {
         cout << "data invalida" << endl;
     }
-
 
     return 0;
 }
