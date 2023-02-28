@@ -15,8 +15,7 @@ int main() {
         cout << "data invalida" << endl;
         return false;
     }
-    
-    // converte string para inteiro
+
     try{
         dia = std::stoi(data.substr(0, 2));
         mes = std::stoi(data.substr(3, 2));
@@ -44,7 +43,7 @@ int main() {
     switch (dia) {
 
         case 31:
-            if (mes == 1 || 3 || 5 || 7 || 8 || 10 || 12) {
+            if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
                     data_certa = true;
                 } else {
                     data_certa = false;
@@ -52,7 +51,7 @@ int main() {
             break;
 
         case 30:
-            if (mes == 4 || 6 || 9 || 11) {
+            if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
                     data_certa = true;
                 } else {
                     data_certa = false;
@@ -74,7 +73,7 @@ int main() {
                     data_certa = false;
                 }
             break;
-            
+
         default:
             data_certa = true;
     }
