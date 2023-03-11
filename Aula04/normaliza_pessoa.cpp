@@ -1,23 +1,29 @@
+#include <iostream>
 #include <string>
 
 using namespace std;
 
-string normaliza(string nome)
-{
+string normaliza(string nome){
 
-    //Abaixo exemplo de como copiar a primeira parte do nome
-    //int pos = nome.find(' ');
-    //string inicio = nome.substr(0, pos);
+    string nome_formatado;
 
-    int pos = nome.rfind(' ');  //procura o ultimo espaço
-
-    if (pos == string::npos) {
+    size_t pos = nome.rfind(" "); //localiza a posicao do ultimo espaço do nome
+    if(pos == string::npos){
         return "";
     }
+    nome_formatado = nome.substr(pos+1) + ", " + nome.substr(0, pos);
 
-    string ultimo = nome.substr(pos + 1);  //copia dessa condicao ate o final
+    return nome_formatado;
+}
 
-    nome = ultimo + ", " + nome.substr(0, pos);
+int main(){
 
-    return nome;
+    string nome, nome_normalizado;
+    getline(cin, nome);
+
+    nome_normalizado = normaliza(nome);
+
+    cout << nome_normalizado << endl;
+
+    return 0;
 }
