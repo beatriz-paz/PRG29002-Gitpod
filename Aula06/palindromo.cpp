@@ -1,27 +1,24 @@
-#include <iostream>
 #include <stack>
-#include <string>
+#include <iostream>
 
 using namespace std;
 
-int main(int argc, char * argv[]){
+int main(int argc, char* argv[]){
 
-    stack<char> palindromo;
+    stack<char>inverte;
+    string palavra = argv[1];
+    string palavra_invertida;
 
-    string palavra = argv[1], palavra_invertida;
-
-    //getline(cin, palavra);
-
-    for(int i=0; i < palavra.size(); i++){
-        palindromo.push(palavra[i]);
+    for (int i = 0; i < palavra.size(); ++i){
+        inverte.push(palavra[i]);
     }
 
-    for(int j=0; j < palavra.size(); j++){
-        palavra_invertida += palindromo.top();
-        palindromo.pop();
+    while (! inverte.empty()){
+        palavra_invertida += inverte.top();
+        inverte.pop();
     }
 
-    if(palavra_invertida == palavra){
+    if (palavra == palavra_invertida){
         cout << "VERDADEIRO" << endl;
     } else{
         cout << "FALSO" << endl;
