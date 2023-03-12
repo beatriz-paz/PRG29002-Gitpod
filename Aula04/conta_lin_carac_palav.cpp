@@ -1,43 +1,35 @@
 #include <iostream>
 #include <fstream>
+#include <error.h>
 #include <string>
 #include <sstream>
 
 using namespace std;
 
-int conta_palavras(string linha)
-{
-    istringstream inp(linha);
-    int np = 0;
-    string algo;
+int main(int argc, char* argv[]){
 
-    while (inp >> algo) {
-        np++;
-    }
-
-    return np;
-}
-
-int main(int argc, char *argv[])
-{
-
+    string linha,  palavra;
+    int num_l = 0, num_p = 0, num_c = 0;
     ifstream arq(argv[1]);
-    if (!arq.is_open()) {
-        perror("ao abrir");
+
+    // verifica se o arquivo foi aberto corretamente
+    if (! arq.is_open()) {
+        perror("Ao abrir /etc/hosts");
         return errno;
     }
-
-    int nc = 0, np = 0, nl = 0;
-
-    string linha;
+    
+    // lê cada linha do arquivo, e imprime quantas linhas tem
 
     while (getline(arq, linha)) {
-        nl++;
-        nc += linha.size() + 1;  //para ler o ultimo caracter \n
-        np += conta_palavras(linha);
+        num_c += linha.size()+1;
+        num_l++;
+        istringstream inp(linha);
+        while (inp >> palavra){
+            num_p++;
+        }
     }
-
-    cout << nl << ' ' << np << ' ' << nc << endl;
+    
+    cout << num_l << ' ' << num_p << ' ' << num_c;
 
     return 0;
 }
