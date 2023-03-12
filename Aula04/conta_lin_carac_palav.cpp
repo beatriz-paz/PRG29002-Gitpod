@@ -18,8 +18,6 @@ int main(int argc, char* argv[]){
         return errno;
     }
     
-    // lê cada linha do arquivo, e imprime quantas linhas tem
-
     while (getline(arq, linha)) {
         num_c += linha.size()+1;
         num_l++;
